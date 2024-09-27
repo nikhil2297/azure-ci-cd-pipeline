@@ -11,6 +11,12 @@ app.get('/health-check', (req: Request, res: Response) => {
     res.send('The server up and running!');
   });
 
+
+  app.get('/get-time', (req: Request, res: Response) => {
+    const date = new Date();
+    res.send(`The current time is ${date.toLocaleTimeString()}`);
+  });
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
